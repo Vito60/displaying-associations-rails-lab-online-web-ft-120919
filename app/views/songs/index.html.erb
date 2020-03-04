@@ -1,0 +1,8 @@
+<ul>
+<%@songs.each do |song|%>
+    <%array = []%>
+    <%array << song.artist.name%>
+    <%array << song.title%>
+    <li><%=link_to array.join(" - "), song_path(song)%></li>
+    <% end %>
+</ul>

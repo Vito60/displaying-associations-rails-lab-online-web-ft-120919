@@ -1,8 +1,12 @@
 class ArtistsController < ApplicationController
   def index
+    @artist = Artist.all
   end
 
   def show
+    @artist = Artist.find_by(params[:id])
+    @songs = Song.all.select{|song| song.artist_id == params[:id].to_i}
+    #binding.pry
   end
 
   def new
